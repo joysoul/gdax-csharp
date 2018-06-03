@@ -14,8 +14,7 @@ namespace GDAXSharp.Specs.JsonFixtures.Services.Orders
 
         public static string CreateMarketOrderRequest()
         {
-            var json = @"
-{
+            var json = @"{
     ""side"":""buy"",
     ""size"":0.01,
     ""price"":0.0,
