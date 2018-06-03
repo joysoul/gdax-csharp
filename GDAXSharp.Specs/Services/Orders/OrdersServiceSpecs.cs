@@ -61,7 +61,7 @@ namespace GDAXSharp.Specs.Services.Orders
             It should_send_the_correct_request_pass = () =>
                 The<IHttpClient>().
                     WasToldTo(p => p.SendAsync(Param<HttpRequestMessage>.Matches(r =>
-                        r.Content.ReadAsStringAsync().Result == OrderRequestFixture.CreateMarketOrderRequest())));
+                        r.Content.ReadAsStringAsync().Result == OrderRequestFixture.CreateMarketOrderRequestTest())));
 
             It should_have_correct_order_information = () =>
             {
