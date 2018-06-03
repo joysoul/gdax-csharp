@@ -53,10 +53,15 @@ namespace GDAXSharp.Specs.Services.Orders
             Because of = () =>
                 order_response_result = Subject.PlaceMarketOrderAsync(OrderSide.Buy, ProductType.BtcUsd, .01M).Result;
 
-            //It should_send_the_correct_request = () =>
-            //       The<IHttpClient>().
-            //           WasToldTo(p => p.SendAsync(Param<HttpRequestMessage>.Matches(r =>
-            //               r.Content.ReadAsStringAsync().Result == OrderRequestFixture.CreateMarketOrderRequest())));
+            It should_send_the_correct_request = () =>
+                   The<IHttpClient>().
+                       WasToldTo(p => p.SendAsync(Param<HttpRequestMessage>.Matches(r =>
+                           r.Content.ReadAsStringAsync().Result == OrderRequestFixture.CreateMarketOrderRequest())));
+
+            It should_send_the_correct_request_pass = () =>
+                The<IHttpClient>().
+                    WasToldTo(p => p.SendAsync(Param<HttpRequestMessage>.Matches(r =>
+                        r.Content.ReadAsStringAsync().Result == OrderRequestFixture.CreateMarketOrderRequest())));
 
             It should_have_correct_order_information = () =>
             {

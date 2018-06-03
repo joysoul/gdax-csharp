@@ -29,6 +29,14 @@ namespace GDAXSharp.Specs.JsonFixtures.Services.Orders
             return Format(json);
         }
 
+
+        public static string CreateMarketOrderRequestTest()
+        {
+            var json2 = "{\"side\":\"buy\",\"size\":0.01,\"price\":0.0,\"type\":\"market\",\"product_id\":\"BTC-USD\",\"time_in_force\":\"GTC\",\"cancel_after\":\"min\",\"post_only\":false}";
+
+            return json2;
+        }
+
         public static string CreateLimitOrderRequest()
         {
             var json = @"
